@@ -77,7 +77,7 @@ if (selected == 'Glaucoma Prediction'):
         st.image(image, caption='Fundus Image.', use_column_width=True)
         st.write("")
         st.write("Classifying...")
-        label = teachable_machine_classification(image, 'https://github.com/Anukul1993/MyApp/blob/main/inception_model.h5')
+        label = teachable_machine_classification(image, 'inception_model.h5')
         print(label)
         if label == 0:
             st.write("Patient is Negative")
