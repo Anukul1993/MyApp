@@ -7,7 +7,9 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from keras.models import load_model
 from io import BytesIO, StringIO
-
+import subprocess
+if not os.path.isfile('inception_model.h5'):
+    subprocess.run(['curl --output inception_model.h5 "https://github.com/Anukul1993/MyApp/blob/main/inception_model.h5"'], shell=True)
 
 
 #@st.cache(allow_output_mutation=True)
@@ -49,7 +51,7 @@ if (selected == 'Glaucoma Prediction'):
     def teachable_machine_classification(img, weights_file):
         # Load the model
         
-        model = keras.models.load_model(weights_file)
+        model = keras.models.load_model(weights_file,compile=False)
         #model = pickle.load(open(weights_file, 'rb'))
 
         # Create the array of the right shape to feed into the keras model
