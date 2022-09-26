@@ -9,7 +9,7 @@ from keras.models import load_model
 from io import BytesIO, StringIO
 
 
-image = Image.open('F:/Study/DBDA2022/Project/UI/X1.png')
+image = Image.open('X1.png')
 st.image(image, use_column_width='auto', width=2000,
          caption='PERCEPTION TO PREDICTION')
 #@st.cache(allow_output_mutation=True)
@@ -29,7 +29,7 @@ with st.sidebar:
                           icons=['person','person'],
                           default_index=0)
                         
-    image = Image.open('F:/Study/DBDA2022/Project/UI/hng.jpg')
+    image = Image.open('hng.jpg')
     st.image(image, use_column_width='auto', width=1000,
          caption='Eye Fundus Image')
 
