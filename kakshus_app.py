@@ -50,10 +50,10 @@ if (selected == 'Glaucoma Prediction'):
         AGE = st.text_input('Patients Age')
 
     @st.cache(suppress_st_warning=True)
-    def teachable_machine_classification(img, weights_file):
+    def teachable_machine_classification(img):
         # Load the model
         
-        model = keras.models.load_model(weights_file)
+        model = keras.models.load_model('inception_model.h5')
         #model = pickle.load(open(weights_file, 'rb'))
 
         # Create the array of the right shape to feed into the keras model
@@ -81,7 +81,7 @@ if (selected == 'Glaucoma Prediction'):
         st.image(image, caption='Fundus Image.', use_column_width=True)
         st.write("")
         st.write("Classifying...")
-        label = teachable_machine_classification(image, 'inception_model.h5')
+        label = teachable_machine_classification(image)
         print(label)
         if label == 0:
             st.info("{} is Normal".format(NAME))
