@@ -53,7 +53,7 @@ if (selected == 'Glaucoma Prediction'):
     def teachable_machine_classification(img):
         # Load the model
         
-        model = keras.models.load_model('inception_model.h5')
+        model = keras.models.load_model('https://github.com/Anukul1993/MyApp/blob/main/inception_model.h5?raw=true')
         #model = pickle.load(open(weights_file, 'rb'))
 
         # Create the array of the right shape to feed into the keras model
